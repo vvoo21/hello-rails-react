@@ -3,8 +3,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 const axios = require('axios')
 export const fetchGreeting = createAsyncThunk('greeting/fetchGreeting', async ()=>{
     try {
-        const response = await axios.get('/api/v1/random_message');
-        return response.data.message
+        const response = await axios.get('/api/random_message');
+        return response.data.text
       } catch (error) {
         console.error(error);
       }
